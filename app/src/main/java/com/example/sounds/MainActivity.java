@@ -1,9 +1,6 @@
 package com.example.sounds;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.media.MediaPlayer;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         uno_1 = findViewById(R.id.one_one);
         uno_2 = findViewById(R.id.one_two);
         uno_3 = findViewById(R.id.one_three);
@@ -46,11 +44,12 @@ public class MainActivity extends AppCompatActivity {
         siete_4 = findViewById(R.id.seven_four);
     }
     public void reproducir(View a){
-        System.out.println(a.getId());
-        System.out.println(uno_1.getId());
 
         if(mPlayer!=null && mPlayer.isPlaying())
-            mPlayer.stop();
+            mPlayer.release();
+
+
+        mPlayer=null;
 
         if(a.getId()==uno_1.getId())
             mPlayer= MediaPlayer.create(this,R.raw.ding_dong_bing_bong);
@@ -115,5 +114,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        opciones_decorView();
+    }
+    private void opciones_decorView(){
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }
