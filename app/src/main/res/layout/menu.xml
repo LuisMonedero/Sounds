@@ -4,114 +4,225 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     android:foregroundGravity="center_vertical|center_horizontal"
-    android:orientation="vertical" >
+    android:gravity="center_vertical"
+    android:orientation="vertical">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="125dp">
+        android:layout_height="100dp"
+        android:layout_marginLeft="25px"
+        android:layout_marginRight="25px"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/menu_interior_botones">
 
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="766dp"
+            android:layout_height="312dp"
+            android:layout_marginTop="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/makoto" />
+            app:srcCompat="@drawable/menu_img_naegi" />
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:shadowColor="#000000"
-            android:text="PERSONAJES"
+
+            android:fontFamily="@font/bitfont"
             android:gravity="center_horizontal|center_vertical"
+            android:shadowColor="#FF0000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="50"
+            android:text="PERSONAJES"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/personajes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/menu_botones"
+            android:onClick="personajes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="125dp">
+        android:layout_height="100dp"
+        android:layout_marginLeft="25px"
+        android:layout_marginRight="25px"
+        android:background="@drawable/menu_interior_botones">
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="775dp"
+            android:layout_height="258dp"
+            android:layout_marginBottom="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/makoto" />
+            app:srcCompat="@drawable/menu_img_himiko" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:shadowColor="#000000"
-            android:text="SPRITES"
+            android:fontFamily="@font/bitfont"
             android:gravity="center_horizontal|center_vertical"
+            android:shadowColor="#FF0000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="58"
+            android:text="SPRITES"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/sprites"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/menu_botones"
+            android:onClick="sprites"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </android.support.constraint.ConstraintLayout>
+
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="125dp">
+        android:layout_height="100dp"
+        android:layout_marginLeft="25px"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="25px"
+        android:background="@drawable/menu_interior_botones">
 
         <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/imageView8"
+            android:layout_width="396dp"
+            android:layout_height="178dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/makoto" />
+            app:srcCompat="@drawable/menu_img_soda" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="634dp"
+            android:layout_height="306dp"
+            android:layout_marginTop="175dp"
+            android:layout_marginEnd="150dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/menu_img_miu" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:shadowColor="#000000"
-            android:text="VARIOS"
+            android:fontFamily="@font/bitfont"
             android:gravity="center_horizontal|center_vertical"
+            android:shadowColor="#FF0000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="58"
+            android:text="OPCIONES"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/opciones"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/menu_botones"
+            android:onClick="opciones"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="125dp">
+        android:layout_height="100dp"
+        android:layout_marginLeft="25px"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="25px"
+        android:background="@drawable/menu_interior_botones">
+
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="1000dp"
+            android:layout_height="300dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/makoto" />
+            app:srcCompat="@drawable/menu_img_mioda" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:shadowColor="#000000"
-            android:text="SONIDOS EXTRA"
+            android:fontFamily="@font/bitfont"
             android:gravity="center_horizontal|center_vertical"
+            android:shadowColor="#FF0000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="58"
+            android:text="SONIDOS\nEXTRA"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/sonidos_extra"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/menu_botones"
+            android:onClick="sonidos"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
 </LinearLayout>

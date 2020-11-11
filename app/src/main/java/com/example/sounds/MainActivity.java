@@ -113,7 +113,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
+        if(mPlayer!=null && mPlayer.isPlaying())
+            mPlayer.release();
+        super.onBackPressed();
     }
     @Override
     protected void onResume() {
