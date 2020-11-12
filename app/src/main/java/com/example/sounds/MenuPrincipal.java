@@ -37,7 +37,15 @@ public class MenuPrincipal extends AppCompatActivity {
         decorView.setSystemUiVisibility(uiOptions);
     }
     public void personajes(View w){
+        FragmentoPersonajes version = supportFragmentManager.findFragmentByTag("menu");
 
+        if (version == null) {
+            version = new FragmentoPersonajes();
+            supportFragmentManager.beginTransaction().add(R.id.menu, version, "menu").commit();
+        } else {
+            if (version.isHidden() || version.isDetached())
+                supportFragmentManager.beginTransaction().attach(version).show(version).commit();
+        }
     }
     public void sprites(View w){
 
