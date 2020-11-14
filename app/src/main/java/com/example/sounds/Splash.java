@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 public class Splash extends AppCompatActivity {
 
@@ -14,11 +16,15 @@ public class Splash extends AppCompatActivity {
         setContentView(R.layout.splash_activity);
         opciones_decorView();
 
+        Animation aparecer = AnimationUtils.loadAnimation(this, R.anim.aparecer);
+        findViewById(R.id.textView).setAnimation(aparecer);
+        findViewById(R.id.imageView).setAnimation(aparecer);
 
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 Intent intent = new Intent(Splash.this, MenuPrincipal.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.aparecer,R.anim.desaparecer);
                 finish();
             };
         }, 2000);

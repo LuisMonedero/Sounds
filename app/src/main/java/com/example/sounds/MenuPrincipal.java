@@ -2,10 +2,10 @@ package com.example.sounds;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 
 public class MenuPrincipal extends AppCompatActivity {
     ConstraintLayout boton1,boton2,boton3,boton4;
@@ -13,8 +13,40 @@ public class MenuPrincipal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu);
+        setContentView(R.layout.menu_activity);
+
+
         opciones_decorView();
+        boton1=findViewById(R.id.opcion1);
+        boton2=findViewById(R.id.opcion2);
+        boton3=findViewById(R.id.opcion3);
+        boton4=findViewById(R.id.opcion4);
+        boton1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuPrincipal.this, Version.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.right_to_center,R.anim.center_to_left);
+                finish();
+            }
+        });
+        boton2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+            }
+        });
+        boton3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuPrincipal.this, MainActivity.class);
+                startActivity(intent);
+
+            }
+        });
+        boton4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+            }
+        });
+
     }
 
     @Override
@@ -36,26 +68,4 @@ public class MenuPrincipal extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(uiOptions);
     }
-    public void personajes(View w){
-        FragmentoPersonajes version = supportFragmentManager.findFragmentByTag("menu");
-
-        if (version == null) {
-            version = new FragmentoPersonajes();
-            supportFragmentManager.beginTransaction().add(R.id.menu, version, "menu").commit();
-        } else {
-            if (version.isHidden() || version.isDetached())
-                supportFragmentManager.beginTransaction().attach(version).show(version).commit();
-        }
-    }
-    public void sprites(View w){
-
-    }
-    public void opciones(View w){
-
-    }
-    public void sonidos(View w){
-        Intent intent = new Intent(MenuPrincipal.this, MainActivity.class);
-        startActivity(intent);
-    }
-
 }
