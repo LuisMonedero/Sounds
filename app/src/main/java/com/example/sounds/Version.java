@@ -13,16 +13,6 @@ public class Version extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.version_activity);
         opciones_decorView();
-
-        ImageView cerrar= findViewById(R.id.cerrar);
-        cerrar.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(Version.this, MenuPrincipal.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.left_to_center,R.anim.center_to_right);
-                finish();
-            }
-        });
     }
 
     private void opciones_decorView(){
